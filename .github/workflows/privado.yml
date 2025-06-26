@@ -7,7 +7,7 @@ jobs:
     if: github.ref_name == github.event.repository.default_branch
     env:
       PRIVADO_API_TOKEN: ${{ secrets.PRIVADO_API_TOKEN }}
-      PRIVADO_API_ID: "bd91b371-c43d-44f4-9964-02cf615a74f0"
+      PRIVADO_API_ID: "e9848c69-e9ba-436a-900b-daf26b8c6007"
       PRIVADO_API_HOST: "https://t.api.code.privado.ai/test"
       PRIVADO_CI_PLATFORM: "GITHUB_ACTIONS"
       PRIVADO_DOCKER_IMAGE: 638117407428.dkr.ecr.ap-south-1.amazonaws.com/scanner-agent:latest
