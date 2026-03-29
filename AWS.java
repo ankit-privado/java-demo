@@ -1,6 +1,7 @@
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
+import com.segment.analytics.Analytics;
 
 public class AWS {
     public static void main(String[] args) {
@@ -16,5 +17,10 @@ public class AWS {
 
         s3Client.putObject(request, RequestBody.fromFile(new File(filePath));
         s3Client.close();
+
+        Analytics analytics = Analytics.builder(writeKey).build();
+        analytics.enqueue(IdentifyMessage.builder()
+              .userId(pii.getAdId())
+              .traits(parameters));
     }
 }
